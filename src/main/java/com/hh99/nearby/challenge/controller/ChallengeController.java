@@ -19,6 +19,7 @@ public class ChallengeController {
        return challengeService.createChallenge(challengeRequestDto, user);
     }
 
+
     @PutMapping("/api/challenge/{challenge_id}")
     public ResponseEntity<?> updateChallenge(@PathVariable Long challenge_id, @RequestBody ChallengeRequestDto challengeRequestDto, @AuthenticationPrincipal UserDetails user){
         return challengeService.updateChallenge(challenge_id,challengeRequestDto, user);
