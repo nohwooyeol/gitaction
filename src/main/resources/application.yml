@@ -1,0 +1,34 @@
+server:
+  servlet:
+    encoding:
+      force: 'true'
+      enabled: 'true'
+      charset: utf-8
+cloud:
+  aws:
+    s3:
+      bucket: aaaa
+    credentials:
+      accessKey: aaaa
+      secretKey: aaaa
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: 'false'
+spring:
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  datasource:
+    password: aaa
+    username: aaa
+    url: aaaa
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: 'false'
+jwt:
+  secret: aaaaa
