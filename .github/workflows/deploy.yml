@@ -25,7 +25,7 @@ permissions:
 
 jobs:
   deploy:
-    name: gradle
+    name: Deploy
     runs-on: ubuntu-latest
     environment: production
 
@@ -41,19 +41,19 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      # properties 설정 파일 쓰기
-      - name: Generate Environment Variables File for Properties
-        uses: microsoft/variable-substitution@v1
-        with:
-         files: ${{ env.RESOURCE_PATH }}
-        env:
-         cloud.aws.credentials.accessKey: ${{ secrets.AWS_ACCESS_KEY_ID }}
-         cloud.aws.credentials.secretKey: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-         jwt.secret: ${{ secrets.JWT_SECRET }}
-         cloud.aws.s3.bucket: ${{ env.S3_BUCKET_NAME }}
-         #spring.datasource.url: ${{ secrets.RDS_URL }} //RDS
-         #spring.datasource.username: ${{ secrets.RDS_ADMIN }}
-         #spring.datasource.password: ${{ secrets.RDS_PASSWORD }}
+#      # properties 설정 파일 쓰기
+#      - name: Generate Environment Variables File for Properties
+#        uses: microsoft/variable-substitution@v1
+#        with:
+#         files: ${{ env.RESOURCE_PATH }}
+#        env:
+#         cloud.aws.credentials.accessKey: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#         cloud.aws.credentials.secretKey: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#         jwt.secret: ${{ secrets.JWT_SECRET }}
+#         cloud.aws.s3.bucket: ${{ env.S3_BUCKET_NAME }}
+#         #spring.datasource.url: ${{ secrets.RDS_URL }} //RDS
+#         #spring.datasource.username: ${{ secrets.RDS_ADMIN }}
+#         #spring.datasource.password: ${{ secrets.RDS_PASSWORD }}
 
       # (3) Gradle build (Test 제외)
       - name: Build with Gradle
