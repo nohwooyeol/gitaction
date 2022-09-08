@@ -47,10 +47,10 @@ jobs:
         with:
          files: ${{ env.RESOURCE_PATH }}
         env:
-         cloud.aws.credentials.accessKey: ${{ secrets.AWS_ACCESS }}
-         cloud.aws.credentials.secretKey: ${{ secrets.AWS_SECRET }}
+         cloud.aws.credentials.accessKey: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         cloud.aws.credentials.secretKey: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
          jwt.secret: ${{ secrets.JWT_SECRET }}
-         cloud.aws.s3.bucket: ${{ env.S3_IMAGE_BUCKET_NAME }}
+         cloud.aws.s3.bucket: ${{ env.S3_BUCKET_NAME }}
          #spring.datasource.url: ${{ secrets.RDS_URL }} //RDS
          #spring.datasource.username: ${{ secrets.RDS_ADMIN }}
          #spring.datasource.password: ${{ secrets.RDS_PASSWORD }}
