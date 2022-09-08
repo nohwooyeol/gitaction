@@ -14,7 +14,6 @@ import java.text.ParseException;
 @RestController
 public class ChallengeController {
     private final ChallengeService challengeService;
-
     @PostMapping("/api/challenge")
     public ResponseEntity<?> createChallenge(@RequestBody ChallengeRequestDto challengeRequestDto, @AuthenticationPrincipal UserDetails user) throws ParseException {
        return challengeService.createChallenge(challengeRequestDto, user);
